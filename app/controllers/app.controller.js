@@ -16,10 +16,10 @@ module.exports = {
         */
         response = `CON What would you like to check
       1. EMERGENCY
-      2. CONSULTATION
-      3. FIND NEAREST HEALTH FACILITY
-      4. MENTAL HEALTH
-      5. SUBSCRIPTIONS
+      2. Consultation
+      3. Find the nearest health facility
+      4. Mental health information
+      5. Subscriptions
       `;
       } else if (text === '1') {
         /*
@@ -68,8 +68,6 @@ module.exports = {
         response = 'END You might be depressed';
       } else if (text === '4*1*2') {
         response = 'END You might be depressed';
-      } else if (text === '1*1') {
-        response = 'END Your account number is 123456';
       } else if (text === '4*2') {
         response = `CON Here are available dates...
         1. 12th
@@ -78,6 +76,51 @@ module.exports = {
         response = 'END (12th) You have an appointment at Nairobi hospital with doctor Wahosh at 12 o\'clock';
       } else if (text === '4*2*2') {
         response = 'END (14th) You have an appointment at Kenyatta hospital with doctor Washi at 12 o\'clock';
+      } else if (text === '5') {
+        /*
+        *  5. SUBSCRIPTIONS
+        */
+        response = `CON Subscribe to get more information
+        1. Get regular updates on important health matters
+        2. Reminders for appointments and medication
+        3. Manage subscriptions
+        4. Cancel all subscriptions
+        `;
+      } else if (text === '5*1') {
+        response = `CON What updates would you like to subscribe to
+        1. Vaccinations and health workshops
+        2. Health newsletters
+        `;
+      } else if (text === '5*1*1') {
+        response = `CON Would you like to subscribe to Vaccinations and health workshops?
+        1. Confirm subscription to Vaccinations and health workshops
+        `;
+      } else if (text === '5*1*1*1') {
+        response = `END You have successfully subscribed to information
+        on Vaccinations and health workshops
+        `;
+      } else if (text === '5*1*2') {
+        response = `CON Would you like to subscribe to Vaccinations and health workshops?
+        1. Confirm subscription to health newsletters
+        `;
+      } else if (text === '5*1*2*1') {
+        response = `END You have successfully subscribed to information
+        on Health newsletters
+        `;
+      } else if (text === '5*2') {
+        response = `CON Here is a list of all appointments you currently have. Kindly select the one you want a reminder of
+        1. Appointment at Kenyatta University Teaching and Referral Hospital
+        `;
+      } else if (text === '5*2*1') {
+        response = `END You will be reminded of your appointment at Kenyatta University Teaching and Referral Hospital via text
+        `;
+      } else if (text === '5*3') {
+        response = `END Here are your subscriptions
+        1. Reminder: Appointment at Kenyatta University Teaching and Referral Hospital
+        `;
+      } else if (text === '5*4') {
+        response = `END You have successfully cancelled your subscriptions
+        `;
       }
 
       // Send the response back to the API
