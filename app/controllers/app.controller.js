@@ -36,10 +36,15 @@ module.exports = {
         /*
         * 3. FIND NEAREST HEALTH FACILITY
         */
-        response = `CON 1. Get Diagnosis
-        2. Schedule an appointment`;
+        response = `CON The Nearest Health Facility is
+        1.Nairobi
+        2.Machakos
+        3.Mombasa
+        4.Nakuru
+        5.Nyeri
+        `;
       } else if (text === '3*1') {
-        response = `CON 1. Feeling Tired
+        response = `CON 1. Feeling
         2. Feeling Uneasy`;
       } else if (text === '3*1*1') {
         response = 'END You might be depressed';
