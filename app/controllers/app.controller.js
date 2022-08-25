@@ -25,8 +25,13 @@ module.exports = {
         /*
         *  1. EMERGENCY
         */
-        response = `CON Choose account information you want to view
-      1. Account number`;
+        response = `CON Please confirm that you are in a state of emergency
+      1. Confirm and accept call from operator`;
+      } else if (text === '1*1') {
+        /*
+        *  1. EMERGENCY
+        */
+        response = 'END You will receive a call shortly';
       } else if (text === '2') {
         /*
         *  2. CONSULTATION
@@ -52,15 +57,29 @@ module.exports = {
         /*
         *  4. MENTAL HEALTH
         */
-        response = `CON 1. Get Diagnosis
-        2. Schedule an appointment`;
+        response = `CON
+        1. Get Diagnosis based on
+
+        2. Talk to an expert
+        `;
       } else if (text === '4*1') {
         response = `CON 1. Feeling Tired
         2. Feeling Uneasy`;
       } else if (text === '4*1*1') {
         response = 'END You might be depressed';
+      } else if (text === '4*1*2') {
+        response = 'END You might be depressed';
       } else if (text === '1*1') {
         response = 'END Your account number is 123456';
+      } else if (text === '4*2') {
+        response = `CON Here are available dates...
+        1. 12th
+        2. 14th`;
+      } else if (text === '4*2*1') {
+        response = 'END (12th) You have an appointment at Nairobi hospital with doctor Wahosh at 12 o\'clock';
+      } else if (text === '4*2*2') {
+        response = 'END (14th) You have an appointment at Kenyatta hospital with doctor Washi at 12 o\'clock';
+
       }
 
       // Send the response back to the API
