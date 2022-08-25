@@ -37,16 +37,40 @@ module.exports = {
         *  2. CONSULTATION
         */
         response = `END Your phone number is ${phoneNumber} by wahome`;
-      } else if (text === '3') {
+      }  else if (text === '3') {
         /*
         * 3. FIND NEAREST HEALTH FACILITY
         */
         response = `CON The Nearest Health Facility is
         1.Nairobi
         2.Machakos
-        3.Mombasa
+        3.Mombasa 
         4.Nakuru
-        5.Nyeri
+        5.Nyeri 
+        `;
+      } else if (text === '3*1') {
+        response = `CON 
+        1.Kenyatta University Teaching and Refferal Hospital
+        2.Kenyatta National Hospital
+        3.Guru Nanak Hospital
+        `;
+      } else if (text === '3*1*1') {
+        response = `CON 
+        1.Book Appointment
+        `;
+      } else if (text === '3*1*1*1') {
+        response = `CON Choose Specialist
+        1.Pediatrician
+        2.Cardiologist
+        3.Phsychiatrist
+        `;
+      }else if (text === '3*1*1*1*1') {
+        response = `CON 25/8/2022 Please Select Time
+        1.8am - 12pm
+        2.2pm - 5pm
+        `;
+      }else if (text === '3*1*1*1*1*1') {
+        response = `END Appointment Set for 25/8/2022 8am - 12pm with Pediatrician
         `;
       } else if (text === '3*1') {
         response = `CON 1. Feeling
