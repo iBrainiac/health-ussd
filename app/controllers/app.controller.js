@@ -1,7 +1,6 @@
 module.exports = {
   index: async (req, res) => {
     try {
-      // Read the variables sent via POST from our API
       const {
         // sessionId,
         // serviceCode,
@@ -12,23 +11,51 @@ module.exports = {
       let response = '';
 
       if (text === '') {
-        // This is the first request. Note how we start the response with CON
+        /*
+        * This is the main menu
+        */
         response = `CON What would you like to check
-      1. My account
-      2. My phone number`;
+      1. EMERGENCY
+      2. CONSULTATION
+      3. FIND NEAREST HEALTH FACILITY
+      4. MENTAL HEALTH
+      5. SUBSCRIPTIONS
+      `;
       } else if (text === '1') {
-        // Business logic for first level response
+        /*
+        *  1. EMERGENCY
+        */
         response = `CON Choose account information you want to view
       1. Account number`;
       } else if (text === '2') {
-        // Business logic for first level response
-        // This is a terminal request. Note how we start the response with END
+        /*
+        *  2. CONSULTATION
+        */
         response = `END Your phone number is ${phoneNumber} by wahome`;
+      } else if (text === '3') {
+        /*
+        * 3. FIND NEAREST HEALTH FACILITY
+        */
+        response = `CON 1. Get Diagnosis
+        2. Schedule an appointment`;
+      } else if (text === '3*1') {
+        response = `CON 1. Feeling Tired
+        2. Feeling Uneasy`;
+      } else if (text === '3*1*1') {
+        response = 'END You might be depressed';
+      } else if (text === '4') {
+        /*
+        *  4. MENTAL HEALTH
+        */
+        response = `CON 1. Get Diagnosis
+        2. Schedule an appointment`;
+      } else if (text === '4*1') {
+        response = `CON 1. Feeling Tired
+        2. Feeling Uneasy`;
+      } else if (text === '4*1*1') {
+        response = 'END You might be depressed';
       } else if (text === '1*1') {
-        // This is a second level response where the user selected 1 in the first instance
-        const accountNumber = 'ACC100101';
-        // This is a terminal request. Note how we start the response with END
-        response = `END Your account number is ${accountNumber}`;
+        response = 'END Your account number is 123456';
       }
 
       // Send the response back to the API
