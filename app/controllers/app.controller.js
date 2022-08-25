@@ -36,8 +36,31 @@ module.exports = {
         /*
         *  2. CONSULTATION
         */
-        response = `END Your phone number is ${phoneNumber} by wahome`;
+        response = `CON Recommendations for symptoms
+        1.COVID-19
+        2.Common cold
+        3.Coughing
+        4.Extreme diarrhoea
+
+        `;
+      } else if (text === '2*1') {
+        response = `END Here are some things you can do
+         Quarantine`;
+
+      } else if (text === '2*2') {
+        response = `END Here are some recommendations for you 
+          drink hot water`;
+
+      } else if (text === '2*3') {
+        response = `END Here are some recommendations for you
+         wear warm clothes`;
+
+      } else if (text === '2*4') {
+        response = `END Here are some recommendations for you
+         take diarrhoea medicine and seek medical advice`;
+      
       } else if (text === '3') {
+
         /*
         * 3. FIND NEAREST HEALTH FACILITY
         */
