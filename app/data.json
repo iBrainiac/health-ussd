@@ -1,1 +1,6 @@
-{}
+{
+  "mainMenu": {
+    "1":"one value",
+    "2":"two value"
+  }
+}
