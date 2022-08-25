@@ -59,6 +59,7 @@ module.exports = {
         */
         response = `CON
         1. Get Diagnosis based on
+
         2. Talk to an expert
         `;
       } else if (text === '4*1') {
@@ -76,6 +77,7 @@ module.exports = {
         response = 'END (12th) You have an appointment at Nairobi hospital with doctor Wahosh at 12 o\'clock';
       } else if (text === '4*2*2') {
         response = 'END (14th) You have an appointment at Kenyatta hospital with doctor Washi at 12 o\'clock';
+
       } else if (text === '5') {
         /*
         *  5. SUBSCRIPTIONS
